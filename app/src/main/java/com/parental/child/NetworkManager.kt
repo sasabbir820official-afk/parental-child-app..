@@ -7,8 +7,7 @@ import org.json.JSONObject
 
 object NetworkManager {
     private var socket: Socket? = null
-    // Replace YOUR_RENDER_URL with your live Render URL (e.g., "https://parental-server-xxxx.onrender.com")
-    private const val SERVER_URL = "YOUR_RENDER_URL"
+    private const val SERVER_URL = "https://realtime-room-relay--sasabbir820offi.replit.app"
 
     fun init() {
         if (socket == null) {
