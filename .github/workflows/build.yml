@@ -12,13 +12,19 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Set up JDK 17
-      uses: actions/setup-java@v5
+      uses: actions/setup-java@v4
       with:
         java-version: '17'
         distribution: 'temurin'
 
+    - name: Setup Android SDK
+      uses: android-actions/setup-android@v3
+
+    - name: Generate Gradle Wrapper
+      run: gradle wrapper
+
     - name: Build Debug APK
-      run: gradle assembleDebug --stacktrace
+      run: ./gradlew assembleDebug --stacktrace
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
